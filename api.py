@@ -23,7 +23,7 @@ def validacao():
         if obrigatorio and(campo not in dados or valor == ''):
             return jsonify({"erro": f"{campo} é obrigatorio"}),400
         if campo in dados and not isinstance(valor, tipo):
-            return jsonify({"erro": f"{campo} apenas recebe {tipo.__name__}"})
+            return jsonify({"erro": f"{campo} apenas recebe {tipo.__name__}"}), 422
 def proximo_id(lista):
     if not lista:
         return 1
